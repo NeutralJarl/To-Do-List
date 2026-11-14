@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task Tree</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- External library: canvas-confetti (loaded from a CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <main class="app">
+    <h1>Task Tree</h1>
+    <p class="hint">Add tasks, then break them into subtasks.</p>
+
+    <div class="add-row">
+      <input id="task-input" type="text" placeholder="What needs doing?" aria-label="Task name" />
+      <select id="parent-select" aria-label="Add under"></select>
+      <button id="add-btn">Add task</button>
+    </div>
+    <p id="error" class="error" role="alert"></p>
+
+    <div class="filters" role="group" aria-label="Filter tasks">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="active">Active</button>
+      <button class="filter" data-filter="completed">Completed</button>
+    </div>
+
+    <ul id="task-list" class="task-list"></ul>
+    <p id="summary" class="summary"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
